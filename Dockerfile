@@ -165,10 +165,7 @@ EXPOSE ${VNC_PORT} ${NOVNC_PORT}
 RUN mkdir -p /opt/defaults
 COPY config/xfce4-panel.xml /opt/defaults/xfce4-panel.xml
 
-# =============================================================================
-# Volumes
-# =============================================================================
-VOLUME ["/home/${USER}/workspace", "/home/${USER}/.config"]
+# Persistent storage: attach a Railway volume via the dashboard instead of the VOLUME instruction.
 
 # =============================================================================
 # Health Check
